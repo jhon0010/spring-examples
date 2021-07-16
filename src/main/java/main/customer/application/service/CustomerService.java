@@ -1,25 +1,21 @@
 package main.customer.application.service;
 
-import main.customer.domain.Customer;
-import main.customer.domain.Gender;
+import main.customer.domain.models.Customer;
+import main.customer.domain.repository.CustomerRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDate;
 import java.util.List;
 
-import static java.util.Arrays.asList;
-
 @Service
-public class CustomerService {
+public record CustomerService(CustomerRepository repository) {
 
-    public List<Customer> defaultList(){
+    @Autowired
+    public CustomerService {
+    }
 
-        return asList(
-                new Customer(1L,"Jhon", "Doe", "jhon.doe@gmail.com",
-                        Gender.MALE, "+57300111222", LocalDate.now()),
-                new Customer(2L,"Carlos", "Perez", "carlos.perez@gmail.com",
-                        Gender.MALE, "+57300333444", LocalDate.now())
-        );
+    public List<Customer> defaultList() {
+        return this.repository.getAll();
     }
 
 }

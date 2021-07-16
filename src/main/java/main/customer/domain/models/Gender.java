@@ -1,4 +1,4 @@
-package main.customer.domain;
+package main.customer.domain.models;
 
 public enum Gender {
     MALE,
