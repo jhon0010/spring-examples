@@ -10,7 +10,7 @@ import java.time.LocalDate;
 @Data
 @AllArgsConstructor
 @Builder
-public class Customer {
+public class CustomerModel {
 
     private Long id;
     private String name;
@@ -19,4 +19,5 @@ public class Customer {
     private Gender gender;
     private String phoneNumber;
     private LocalDate dateOfBirth;
+    private Integer age;
 }

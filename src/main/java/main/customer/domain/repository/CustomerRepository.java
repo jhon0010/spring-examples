@@ -1,6 +1,6 @@
 package main.customer.domain.repository;
 
-import main.customer.domain.models.Customer;
+import main.customer.domain.models.CustomerModel;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -8,6 +8,7 @@ import java.util.List;
 @Repository
 public interface CustomerRepository {
 
-    List<Customer> getAll();
+    List<CustomerModel> getAll();
+    CustomerModel create(CustomerModel model);
 
 }

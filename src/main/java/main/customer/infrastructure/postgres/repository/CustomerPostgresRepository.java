@@ -1,6 +1,6 @@
 package main.customer.infrastructure.postgres.repository;
 
-import main.customer.domain.models.Customer;
+import main.customer.domain.models.CustomerModel;
 import main.customer.domain.repository.CustomerRepository;
 import main.customer.infrastructure.mappers.CustomerEntityDataMapper;
 import main.customer.infrastructure.postgres.daos.CustomerDAO;
@@ -21,10 +21,17 @@ public class CustomerPostgresRepository implements CustomerRepository {
     }
 
     @Override
-    public List<Customer> getAll() {
+    public List<CustomerModel> getAll() {
         return this.customerDAO.findAll()
                 .stream()
                 .map(CustomerEntityDataMapper::toModel)
                 .collect(Collectors.toList());
+    }
+
+    @Override
+    public CustomerModel create(CustomerModel model) {
+        return CustomerEntityDataMapper.toModel(
+                this.customerDAO.save(CustomerEntityDataMapper.fromModel(model))
+        );
     }
 }

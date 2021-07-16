@@ -1,6 +1,7 @@
 package main.customer.infrastructure.postgres.entities;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import main.customer.domain.models.Gender;
@@ -13,6 +14,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 import java.time.LocalDate;
 
 @Entity
@@ -20,18 +22,11 @@ import java.time.LocalDate;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 public class CustomerEntity {
 
     @Id
-    @SequenceGenerator(
-            name = "customer_id_sequence",
-            sequenceName = "customer_id_sequence",
-            allocationSize = 1
-    )
-    @GeneratedValue(
-           strategy = GenerationType.SEQUENCE,
-            generator = "customer_id_sequence"
-    )
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // For postgres serial ids
     private Long id;
     private String name;
     private String lastName;
@@ -41,4 +36,7 @@ public class CustomerEntity {
     private Gender gender;
     private String phoneNumber;
     private LocalDate dateOfBirth;
+
+    @Transient // is not persistent.
+    private Integer age;
 }
