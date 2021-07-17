@@ -5,6 +5,7 @@ import lombok.Builder;
 import lombok.Data;
 
 import java.time.LocalDate;
+import java.time.Period;
 
 
 @Data
@@ -20,4 +21,8 @@ public class CustomerModel {
     private String phoneNumber;
     private LocalDate dateOfBirth;
     private Integer age;
+
+    public Integer getAge() {
+        return Period.between(this.dateOfBirth, LocalDate.now()).getYears();
+    }
 }

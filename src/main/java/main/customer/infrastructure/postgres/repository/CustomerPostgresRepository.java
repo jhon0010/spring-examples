@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Repository
@@ -33,5 +34,11 @@ public class CustomerPostgresRepository implements CustomerRepository {
         return CustomerEntityDataMapper.toModel(
                 this.customerDAO.save(CustomerEntityDataMapper.fromModel(model))
         );
+    }
+
+    @Override
+    public Optional<CustomerModel> getByEmail(String email) {
+        return this.customerDAO.getByEmail(email)
+                .map(CustomerEntityDataMapper::toModel);
     }
 }
