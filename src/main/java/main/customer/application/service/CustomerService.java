@@ -1,12 +1,15 @@
 package main.customer.application.service;
 
+import main.customer.domain.models.CustomerId;
 import main.customer.domain.models.CustomerModel;
 import main.customer.domain.repository.CustomerRepository;
 import main.customer.infrastructure.dto.CustomerDTO;
 import main.shared.infrastructure.exception.RESTApiRequestException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Service;
 
+import java.text.MessageFormat;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -42,4 +45,13 @@ public class CustomerService {
         );
     }
 
+    public void delete(CustomerId customerId) {
+
+        try {
+            this.repository.delete(customerId);
+        } catch (EmptyResultDataAccessException e) {
+            throw new RESTApiRequestException(MessageFormat.format("There is not customer with id {0}", customerId), e);
+        }
+
+    }
 }

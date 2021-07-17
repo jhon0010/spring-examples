@@ -1,5 +1,6 @@
 package main.customer.infrastructure.postgres.repository;
 
+import main.customer.domain.models.CustomerId;
 import main.customer.domain.models.CustomerModel;
 import main.customer.domain.repository.CustomerRepository;
 import main.customer.infrastructure.mappers.CustomerEntityDataMapper;
@@ -40,5 +41,10 @@ public class CustomerPostgresRepository implements CustomerRepository {
     public Optional<CustomerModel> getByEmail(String email) {
         return this.customerDAO.getByEmail(email)
                 .map(CustomerEntityDataMapper::toModel);
+    }
+
+    @Override
+    public void delete(CustomerId customerId) {
+        this.customerDAO.deleteById(customerId.getId());
     }
 }

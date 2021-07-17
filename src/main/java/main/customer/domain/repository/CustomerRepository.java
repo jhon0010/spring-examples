@@ -1,7 +1,7 @@
 package main.customer.domain.repository;
 
+import main.customer.domain.models.CustomerId;
 import main.customer.domain.models.CustomerModel;
-import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -13,4 +13,5 @@ public interface CustomerRepository {
     List<CustomerModel> getAll();
     CustomerModel create(CustomerModel model);
     Optional<CustomerModel> getByEmail(String email);
+    void delete(CustomerId customerId);
 }

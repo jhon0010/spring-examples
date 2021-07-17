@@ -1,5 +1,6 @@
 package main.customer.infrastructure.mappers;
 
+import main.customer.domain.models.CustomerId;
 import main.customer.domain.models.CustomerModel;
 import main.customer.infrastructure.postgres.entities.CustomerEntity;
 
@@ -8,7 +9,11 @@ public final class CustomerEntityDataMapper {
     public static CustomerModel toModel(CustomerEntity entity){
 
         return CustomerModel.builder()
-                .id(entity.getId())
+                .customerId(
+                        CustomerId.builder()
+                                .id(entity.getId())
+                                .build()
+                )
                 .name(entity.getName())
                 .email(entity.getEmail())
                 .gender(entity.getGender())
@@ -21,9 +26,7 @@ public final class CustomerEntityDataMapper {
     public static CustomerEntity fromModel(CustomerModel model){
 
         return CustomerEntity.builder()
-                //.age(model.getAge())
                 .dateOfBirth(model.getDateOfBirth())
-                //.id(model.getId())
                 .email(model.getEmail())
                 .gender(model.getGender())
                 .lastName(model.getLastName())

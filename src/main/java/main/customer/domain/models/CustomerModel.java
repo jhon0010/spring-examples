@@ -13,7 +13,7 @@ import java.time.Period;
 @Builder
 public class CustomerModel {
 
-    private Long id;
+    private CustomerId customerId;
     private String name;
     private String lastName;
     private String email;
