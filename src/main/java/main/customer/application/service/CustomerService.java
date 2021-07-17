@@ -3,6 +3,7 @@ package main.customer.application.service;
 import main.customer.domain.models.CustomerModel;
 import main.customer.domain.repository.CustomerRepository;
 import main.customer.infrastructure.dto.CustomerDTO;
+import main.shared.infrastructure.exception.RESTApiRequestException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -32,7 +33,7 @@ public class CustomerService {
         Optional<CustomerModel> customer = this.repository.getByEmail(dto.email());
 
         if(customer.isPresent()) {
-            throw new IllegalStateException("The email es already taken," +
+            throw new RESTApiRequestException("The email es already taken," +
                     " please verify if you are already registered in our site");
         }
 
