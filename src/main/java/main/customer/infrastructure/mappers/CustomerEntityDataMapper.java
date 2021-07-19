@@ -26,6 +26,7 @@ public final class CustomerEntityDataMapper {
     public static CustomerEntity fromModel(CustomerModel model){
 
         return CustomerEntity.builder()
+                .id(model.getCustomerId().getId())
                 .dateOfBirth(model.getDateOfBirth())
                 .email(model.getEmail())
                 .gender(model.getGender())

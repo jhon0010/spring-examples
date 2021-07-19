@@ -8,8 +8,8 @@ import main.shared.infrastructure.exception.RESTApiRequestException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
-import java.text.MessageFormat;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -50,8 +50,27 @@ public class CustomerService {
         try {
             this.repository.delete(customerId);
         } catch (EmptyResultDataAccessException e) {
-            throw new RESTApiRequestException(MessageFormat.format("There is not customer with id {0}", customerId), e);
+            throw RESTApiRequestException.createNoCustomerByIdException(customerId.getId(), e);
         }
+
+    }
+
+    @Transactional
+    public void update(CustomerId customerId, String name, String email) {
+
+        CustomerModel customer = this.repository.getById(customerId).orElseThrow(() ->
+                RESTApiRequestException.createNoCustomerByIdException(customerId.getId(), null)
+        );
+
+        if(name != null && !customer.getName().equals(name))  {
+            customer.setName(name);
+        }
+
+        if(email != null && !customer.getEmail().equals(email)) {
+            customer.setEmail(email);
+        }
+
+        this.repository.update(customer);
 
     }
 }

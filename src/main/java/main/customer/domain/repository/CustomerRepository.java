@@ -12,6 +12,9 @@ public interface CustomerRepository {
 
     List<CustomerModel> getAll();
     CustomerModel create(CustomerModel model);
+
+    Optional<CustomerModel> getById(CustomerId customerId);
     Optional<CustomerModel> getByEmail(String email);
     void delete(CustomerId customerId);
+    void update(CustomerModel customer);
 }

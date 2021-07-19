@@ -8,6 +8,7 @@ import main.customer.infrastructure.postgres.daos.CustomerDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import javax.persistence.EntityNotFoundException;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -38,6 +39,18 @@ public class CustomerPostgresRepository implements CustomerRepository {
     }
 
     @Override
+    public Optional<CustomerModel> getById(CustomerId customerId) {
+
+        try {
+            return Optional.of(
+                    CustomerEntityDataMapper.toModel(this.customerDAO.getById(customerId.getId()))
+            );
+        } catch (EntityNotFoundException enfe) {
+            return Optional.empty();
+        }
+    }
+
+    @Override
     public Optional<CustomerModel> getByEmail(String email) {
         return this.customerDAO.getByEmail(email)
                 .map(CustomerEntityDataMapper::toModel);
@@ -46,5 +59,10 @@ public class CustomerPostgresRepository implements CustomerRepository {
     @Override
     public void delete(CustomerId customerId) {
         this.customerDAO.deleteById(customerId.getId());
+    }
+
+    @Override
+    public void update(CustomerModel customer) {
+        this.customerDAO.save(CustomerEntityDataMapper.fromModel(customer));
     }
 }
