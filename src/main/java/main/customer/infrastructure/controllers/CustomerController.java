@@ -3,7 +3,9 @@ package main.customer.infrastructure.controllers;
 import main.customer.application.service.CustomerService;
 import main.customer.domain.models.CustomerId;
 import main.customer.infrastructure.dto.CustomerDTO;
+import main.shared.infrastructure.exception.aspects.Loggable;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -27,9 +29,10 @@ public class CustomerController {
         this.customerService = customerService;
     }
 
+    @Loggable(logRequest = true)
     @GetMapping
-    public List<CustomerDTO> getCustomers(){
-        return this.customerService.defaultList();
+    public ResponseEntity<List<CustomerDTO>> getCustomers(){
+        return ResponseEntity.ok(this.customerService.defaultList());
     }
 
     @PostMapping
