@@ -1,0 +1,15 @@
+/home/jhon/workspace/spring-examples/src/main/java/main/customer/infrastructure/dto/CustomerDTO.java
+/home/jhon/workspace/spring-examples/src/main/java/main/customer/infrastructure/mappers/CustomerEntityDataMapper.java
+/home/jhon/workspace/spring-examples/src/main/java/main/customer/infrastructure/postgres/entities/CustomerEntity.java
+/home/jhon/workspace/spring-examples/src/main/java/main/Main.java
+/home/jhon/workspace/spring-examples/src/main/java/main/customer/infrastructure/postgres/daos/CustomerDAO.java
+/home/jhon/workspace/spring-examples/src/main/java/main/customer/domain/models/Gender.java
+/home/jhon/workspace/spring-examples/src/main/java/main/shared/infrastructure/exception/handler/ApiExceptionHandler.java
+/home/jhon/workspace/spring-examples/src/main/java/main/customer/domain/repository/CustomerRepository.java
+/home/jhon/workspace/spring-examples/src/main/java/main/customer/infrastructure/controllers/CustomerController.java
+/home/jhon/workspace/spring-examples/src/main/java/main/customer/application/service/CustomerService.java
+/home/jhon/workspace/spring-examples/src/main/java/main/shared/infrastructure/exception/RESTApiRequestException.java
+/home/jhon/workspace/spring-examples/src/main/java/main/customer/domain/models/CustomerId.java
+/home/jhon/workspace/spring-examples/src/main/java/main/customer/domain/models/CustomerModel.java
+/home/jhon/workspace/spring-examples/src/main/java/main/shared/infrastructure/exception/ApiRequestException.java
+/home/jhon/workspace/spring-examples/src/main/java/main/customer/infrastructure/postgres/repository/CustomerPostgresRepository.java

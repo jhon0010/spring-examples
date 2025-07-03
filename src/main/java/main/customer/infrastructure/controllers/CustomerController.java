@@ -3,7 +3,6 @@ package main.customer.infrastructure.controllers;
 import main.customer.application.service.CustomerService;
 import main.customer.domain.models.CustomerId;
 import main.customer.infrastructure.dto.CustomerDTO;
-import main.shared.infrastructure.exception.aspects.Loggable;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -29,7 +28,6 @@ public class CustomerController {
         this.customerService = customerService;
     }
 
-    @Loggable(logRequest = true)
     @GetMapping
     public ResponseEntity<List<CustomerDTO>> getCustomers(){
         return ResponseEntity.ok(this.customerService.defaultList());
