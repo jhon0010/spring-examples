@@ -27,6 +27,15 @@ spring:
       hibernate:
         format_sql: true
 
+  ai:
+    ollama:
+      # Where your local Ollama daemon listens (default)
+      base-url: http://localhost:11434
+      chat:
+        options:
+          model: deepseek-r1
+          temperature: 0.1 # a bit of creativity
+
 server:
   error:
     include-message: always
