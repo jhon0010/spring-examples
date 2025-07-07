@@ -1,11 +1,11 @@
 package main.customer.application.service;
 
+import lombok.AllArgsConstructor;
 import main.customer.domain.models.CustomerId;
 import main.customer.domain.models.CustomerModel;
 import main.customer.domain.repository.CustomerRepository;
 import main.customer.infrastructure.dto.CustomerDTO;
 import main.shared.infrastructure.exception.RESTApiRequestException;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -14,15 +14,10 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+@AllArgsConstructor
 @Service
 public class CustomerService {
-
     private final CustomerRepository repository;
-
-    @Autowired
-    public CustomerService(CustomerRepository repository) {
-        this.repository = repository;
-    }
 
     public List<CustomerDTO> defaultList() {
         return this.repository.getAll().stream()

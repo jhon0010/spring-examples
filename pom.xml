@@ -76,10 +76,16 @@
 			<artifactId>flyway-core</artifactId>
 		</dependency>
 
-		<!-- Spring AI starter for Ollama -->
+		<!-- Spring AI  for Ollama -->
 		<dependency>
 			<groupId>org.springframework.ai</groupId>
-			<artifactId>spring-ai-starter-model-ollama</artifactId>
+			<artifactId>spring-ai-core</artifactId>
+			<version>1.0.0-M5</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.ai</groupId>
+			<artifactId>spring-ai-ollama</artifactId>
+			<version>1.0.0-M5</version>
 		</dependency>
 
 		<!-- TESTING DEPENDENCIES -->

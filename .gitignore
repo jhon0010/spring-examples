@@ -1,53 +1,62 @@
-# Maven build directory
+# Java
+*.class
+*.jar
+*.war
+*.ear
+
+# Maven
+/target/
 target/
+!.mvn/wrapper/maven-wrapper.jar
+mvnw
+mvnw.cmd
 
-# Backup and temporary files created by Maven
-pom.xml.tag
-pom.xml.releaseBackup
-pom.xml.versionsBackup
-pom.xml.next
-release.properties
-dependency-reduced-pom.xml
-buildNumber.properties
-
-# Maven wrapper files (usually committed, but the jar can be ignored if preferred)
-.mvn/timing.properties
-.mvn/wrapper/maven-wrapper.jar
-
-HELP.md
-.gradle
-build/
-!gradle/wrapper/gradle-wrapper.jar
-!**/src/main/**/build/
-!**/src/test/**/build/
-
-### STS ###
-.apt_generated
-.classpath
-.factorypath
-.project
-.settings
-.springBeans
-.sts4-cache
-bin/
-!**/src/main/**/bin/
-!**/src/test/**/bin/
-
-### IntelliJ IDEA ###
-.idea
-*.iws
+# IntelliJ IDEA
+.idea/
 *.iml
+*.iws
 *.ipr
 out/
-!**/src/main/**/out/
-!**/src/test/**/out/
 
-### NetBeans ###
-/nbproject/private/
-/nbbuild/
-/dist/
-/nbdist/
-/.nb-gradle/
+# Eclipse
+.project
+.classpath
+.csettings
+.settings/
 
-### VS Code ###
+# VS Code
 .vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+nohup.out
+*.log
+
+# Spring Boot
+spring.log
+
+# Test reports
+surefire-reports/
+
+# Database
+*.h2.db
+*.mv.db
+*.sqlite
+
+# Misc
+*.swp
+*.swo
+
+# Generated sources
+/generated-sources/
+/generated-test-sources/
+
+# Environment files
+.env
+
+# Ignore local application config
+src/main/resources/application-local.yml
+
