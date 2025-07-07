@@ -1,4 +1,4 @@
-package main.application.services;
+package main.infrastructure.ai.services;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.AllArgsConstructor;
