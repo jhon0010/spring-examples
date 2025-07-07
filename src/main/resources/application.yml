@@ -1,19 +1,18 @@
-# Postgresql Configuration (commented out)
-#spring:
-#  datasource:
-#    url: jdbc:postgresql://localhost:5432/order_management_system
-#    username: postgres
-#    password: postgres
-#    initialization-mode: always
-#    initialize: true
-
-# H2 runtime database localhost Configuration
 spring:
   datasource:
-    url: jdbc:h2:mem:billing-service
-    driver-class-name: org.h2.Driver
-    username: sa
-    password: ""
+    url: jdbc:postgresql://localhost:5432/leadsdb
+    username: leaduser
+    password: secretock
+    initialization-mode: always
+    initialize: true
+
+# H2 runtime database localhost Configuration
+#spring:
+#  datasource:
+#    url: jdbc:h2:mem:billing-service
+#    driver-class-name: org.h2.Driver
+#    username: sa
+#    password: ""
 
   flyway:
     baseline-on-migrate: true
@@ -35,6 +34,11 @@ spring:
           #model: deepseek-r1
           model: llama3
           temperature: 0.1 # a bit of creativity
+    vector-store:
+      pgvector:
+        index-type: HNSW # or IVFFlat
+        distance-type: COSINE # or L2 or INNER_PRODUCT
+        dimension: 384 # or 768
 
 server:
   error:

@@ -1,7 +1,7 @@
 package mother.dto;
 
-import main.customer.domain.models.CustomerId;
-import main.customer.domain.models.CustomerModel;
+import main.domain.models.CustomerId;
+import main.domain.models.CustomerModel;
 
 import java.time.LocalDate;
 import java.util.List;

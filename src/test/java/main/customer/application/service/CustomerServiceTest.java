@@ -1,8 +1,9 @@
 package main.customer.application.service;
 
-import main.customer.domain.models.CustomerModel;
-import main.customer.domain.repository.CustomerRepository;
-import main.customer.infrastructure.dto.CustomerDTO;
+import main.domain.models.CustomerModel;
+import main.domain.repository.CustomerRepository;
+import main.infrastructure.web.dto.CustomerDTO;
+import main.service.CustomerService;
 import mother.dto.CustomerModelObjectMother;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
