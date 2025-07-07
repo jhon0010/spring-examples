@@ -1,4 +1,4 @@
-package main.infrastructure.postgres.entities;
+package main.infrastructure.db.postgres.entities;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;

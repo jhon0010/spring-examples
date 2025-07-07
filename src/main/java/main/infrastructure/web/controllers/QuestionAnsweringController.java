@@ -2,7 +2,7 @@
 package main.infrastructure.web.controllers;
 
 import main.infrastructure.web.dto.QuestionAnsweringDTO;
-import main.infrastructure.web.services.QuestionAnsweringService;
+import main.application.services.QuestionAnsweringService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestBody;

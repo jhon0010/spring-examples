@@ -3,7 +3,7 @@ package main.customer.application.service;
 import main.domain.models.CustomerModel;
 import main.domain.repository.CustomerRepository;
 import main.infrastructure.web.dto.CustomerDTO;
-import main.service.CustomerService;
+import main.application.services.CustomerService;
 import mother.dto.CustomerModelObjectMother;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;

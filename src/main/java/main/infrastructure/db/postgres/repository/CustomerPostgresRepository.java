@@ -1,11 +1,11 @@
-package main.infrastructure.postgres.repository;
+package main.infrastructure.db.postgres.repository;
 
 import jakarta.persistence.EntityNotFoundException;
 import main.domain.models.CustomerId;
 import main.domain.models.CustomerModel;
 import main.domain.repository.CustomerRepository;
 import main.infrastructure.web.mappers.CustomerEntityDataMapper;
-import main.infrastructure.postgres.daos.CustomerDAO;
+import main.infrastructure.db.postgres.daos.CustomerDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 

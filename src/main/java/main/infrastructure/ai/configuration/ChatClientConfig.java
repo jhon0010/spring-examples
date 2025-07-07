@@ -11,6 +11,7 @@ import org.springframework.context.annotation.Configuration;
 
 import org.springframework.ai.ollama.api.OllamaApi;
 import org.springframework.ai.ollama.api.OllamaOptions;
+import org.springframework.context.annotation.Primary;
 
 import java.util.List;
 
@@ -21,6 +22,7 @@ public class ChatClientConfig {
     @Value("${spring.ai.ollama.chat.options.model}")
     private String modelName;
 
+    @Primary
     @Bean
     public OllamaChatModel ollamaChatModel() {
         if (ollamaChatModel == null) {

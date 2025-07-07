@@ -1,6 +1,6 @@
-package main.infrastructure.postgres.daos;
+package main.infrastructure.db.postgres.daos;
 
-import main.infrastructure.postgres.entities.CustomerEntity;
+import main.infrastructure.db.postgres.entities.CustomerEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;

@@ -1,4 +1,4 @@
-package main.service;
+package main.application.services;
 
 import lombok.AllArgsConstructor;
 import main.domain.models.CustomerId;

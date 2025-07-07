@@ -1,6 +1,6 @@
 package main.infrastructure.web.controllers;
 
-import main.service.CustomerService;
+import main.application.services.CustomerService;
 import main.domain.models.CustomerId;
 import main.infrastructure.web.dto.CustomerDTO;
 import org.springframework.beans.factory.annotation.Autowired;

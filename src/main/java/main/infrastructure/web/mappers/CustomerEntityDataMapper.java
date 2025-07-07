@@ -2,7 +2,7 @@ package main.infrastructure.web.mappers;
 
 import main.domain.models.CustomerId;
 import main.domain.models.CustomerModel;
-import main.infrastructure.postgres.entities.CustomerEntity;
+import main.infrastructure.db.postgres.entities.CustomerEntity;
 
 public final class CustomerEntityDataMapper {
 
