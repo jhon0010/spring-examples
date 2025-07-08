@@ -19,6 +19,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * Class in charge of to handle embeddings and similarity search with embeddings products.
+ */
 @Service
 public class EmbeddingsService {
     private static List<ProductDTO> productList = new ArrayList<>();

@@ -1,4 +1,4 @@
-package main.infrastructure.ai.web.controllers;
+package main.infrastructure.web.controllers;
 
 import main.infrastructure.ai.services.EmbeddingsService;
 import main.infrastructure.web.dto.ProductSimilarityDTO;

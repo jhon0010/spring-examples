@@ -20,10 +20,8 @@ import java.util.List;
 
 @Configuration
 public class ChatClientConfig {
-    private OllamaChatModel ollamaChatModel;
-    // NOTE: "text-embedding-ada-002" is an OpenAI model.
-    // For Ollama, use a model like "nomic-embed-text" or another embedding model you have pulled.
     private static final String EMBEDDING_MODEL_NAME = "nomic-embed-text";
+    private OllamaChatModel ollamaChatModel;
 
     @Value("${spring.ai.ollama.chat.options.model}")
     private String modelName;
