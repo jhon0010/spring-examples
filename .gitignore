@@ -60,3 +60,4 @@ surefire-reports/
 # Ignore local application config
 src/main/resources/application-local.yml
 
+/generated-images/

@@ -41,6 +41,10 @@
 		<!-- CORE DEV DEPENDENCIES -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-webflux</artifactId>
 		</dependency>
 		<dependency>
@@ -78,16 +82,22 @@
 			<artifactId>flyway-database-postgresql</artifactId>
 		</dependency>
 
-        <!-- Spring AI for Ollama -->
+        <!-- SPRING AI LIBRARIES--> <!-- Version managed by BOM -->
 		<dependency>
 			<groupId>org.springframework.ai</groupId>
 			<artifactId>spring-ai-core</artifactId>
-			<!-- Version managed by BOM -->
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.ai</groupId>
 			<artifactId>spring-ai-ollama</artifactId>
-			<!-- Version managed by BOM -->
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.ai</groupId>
+			<artifactId>spring-ai-openai</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.ai</groupId>
+			<artifactId>spring-ai-openai-spring-boot-starter</artifactId>
 		</dependency>
 
 		<!-- TESTING DEPENDENCIES -->
