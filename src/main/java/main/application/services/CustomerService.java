@@ -25,16 +25,12 @@ public class CustomerService {
                 .collect(Collectors.toList());
     }
 
-
     public CustomerDTO create(CustomerDTO dto){
-
         Optional<CustomerModel> customer = this.repository.getByEmail(dto.email());
-
         if(customer.isPresent()) {
             throw new RESTApiRequestException("The email es already taken," +
                     " please verify if you are already registered in our site");
         }
-
         return CustomerDTO.fromModel(
                 this.repository.create(dto.toModel())
         );
@@ -47,25 +43,19 @@ public class CustomerService {
         } catch (EmptyResultDataAccessException e) {
             throw RESTApiRequestException.createNoCustomerByIdException(customerId.getId(), e);
         }
-
     }
 
     @Transactional
     public void update(CustomerId customerId, String name, String email) {
-
         CustomerModel customer = this.repository.getById(customerId).orElseThrow(() ->
                 RESTApiRequestException.createNoCustomerByIdException(customerId.getId(), null)
         );
-
         if(name != null && !customer.getName().equals(name))  {
             customer.setName(name);
         }
-
         if(email != null && !customer.getEmail().equals(email)) {
             customer.setEmail(email);
         }
-
         this.repository.update(customer);
-
     }
 }

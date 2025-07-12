@@ -13,6 +13,12 @@ import java.util.Objects;
 @Service
 public class SimilarityCalculatorService {
 
+    /**
+     * Calculates the cosine similarity between two vectors.
+     * @param vectorA float array representing the first vector
+     * @param vectorB float array representing the second vector
+     * @return the cosine similarity as a float value, where 1 means identical, 0 means orthogonal, and -1 means opposite
+     */
     private float calculateCosineSimilarity(float[] vectorA, float[] vectorB) {
         float dotProduct = 0.0f;
         float normA = 0.0f;

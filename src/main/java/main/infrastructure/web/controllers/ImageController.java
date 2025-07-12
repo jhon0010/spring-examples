@@ -8,6 +8,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+/**
+ * This controller provides an endpoint to generate images.
+ * It is a synchronous endpoint to avoid blocking the server in the AI generation image process.
+ */
 @RestController
 @RequestMapping("/api/images")
 @RequiredArgsConstructor

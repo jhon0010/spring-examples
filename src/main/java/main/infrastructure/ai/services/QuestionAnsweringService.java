@@ -8,6 +8,10 @@ import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Mono;
 
+/**
+ * The service uses a specific prompt template to ensure the response is in JSON format.
+ * Then it processes the response, doing a simple object mapper conversion to a DTO.
+ */
 @Log4j2
 @AllArgsConstructor
 @Service
