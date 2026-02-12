@@ -1,27 +1,22 @@
 package main.infrastructure.db.postgres.repository;
 
 import jakarta.persistence.EntityNotFoundException;
+import lombok.RequiredArgsConstructor;
 import main.domain.models.CustomerId;
 import main.domain.models.CustomerModel;
 import main.domain.repository.CustomerRepository;
 import main.infrastructure.web.mappers.CustomerEntityDataMapper;
 import main.infrastructure.db.postgres.daos.CustomerDAO;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+@RequiredArgsConstructor
 @Repository
 public class CustomerPostgresRepository implements CustomerRepository {
-
     private final CustomerDAO customerDAO;
-
-    @Autowired
-    public CustomerPostgresRepository(CustomerDAO customerDAO) {
-        this.customerDAO = customerDAO;
-    }
 
     @Override
     public List<CustomerModel> getAll() {

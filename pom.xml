@@ -100,6 +100,12 @@
 			<artifactId>spring-ai-openai-spring-boot-starter</artifactId>
 		</dependency>
 
+		<!-- security dependencies-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
+
 		<!-- TESTING DEPENDENCIES -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
