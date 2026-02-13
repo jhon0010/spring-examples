@@ -40,4 +40,17 @@ public class UsersController {
     public void deleteUser(@PathVariable Long id) {
         usersService.deleteUser(id);
     }
+
+    @PostMapping("/login")
+    public String login(@RequestBody Users user) {
+        System.out.println(user);
+        return usersService.login(user);
+    }
+
+    @PostMapping("/register")
+    public String register(@RequestBody Users user) {
+        System.out.println(user);
+        return "Register successful";
+    }
+
 }
