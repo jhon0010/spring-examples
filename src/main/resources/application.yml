@@ -5,10 +5,6 @@ spring:
     password: secretock
     initialization-mode: always
     initialize: true
-  security:
-    user:
-      name: jhon
-      password: jhon
 
   flyway:
     baseline-on-migrate: true
